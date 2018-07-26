@@ -1,0 +1,14 @@
+Fragen
+
+Sind Reifen bei Erstaufnahme neu/erneuert oder gibt es Neuaufnahmen, die gebraucht und Laufzeit haben, Z.B. es wird ein gebrauchter LKW gekauft?
+
+Welche Reifentypen gibt es?
+- VA (Vorderachse)
+- HA (Hinterachse)
+- AA (Antriebsachse)
+- LA (Liftachse)
+- AH (Anhänger)
+
+Ist Doppelbereifung eine Eigenschaft eines einzelnen Reifens, also gibt es Reifen, die einzig für Doppelbereifung vorgesehen sind oder werden da zwei normale Reifen genommen?
+
+Sollen Felgen auch erfasst werden?
