@@ -22,7 +22,7 @@ class AppController extends Controller
          'Lord Varys'         => 'Conleth Hill'
        ];
 
-       return view('app');
+       return view('application');
     }
 
     /**

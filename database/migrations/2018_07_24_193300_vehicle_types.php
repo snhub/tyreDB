@@ -20,6 +20,7 @@ class VehicleTypes extends Migration
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
             $table->string('name', 30);
+            $table->char('abbreviation', 3);
         });
         DB::statement("COMMENT ON TABLE $tableName IS '>Motorwagen<, >Anhänger<, usw.'");
     }

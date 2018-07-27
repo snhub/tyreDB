@@ -12,16 +12,16 @@ class TyreAxlesTableSeeder extends Seeder
     public function run()
     {
         DB::table('tyre_axles')->insert([
-            'name' => 'Allachsbereifung'
+            'name' => 'Allachsbereifung', 'abbreviation' => 'AL'
         ]);
         DB::table('tyre_axles')->insert([
-            'name' => 'Antriebsachse'
+            'name' => 'Antriebsachse', 'abbreviation' => 'AA'
         ]);
         DB::table('tyre_axles')->insert([
-            'name' => 'Lenkachse'
+            'name' => 'Lenkachse', 'abbreviation' => 'LA'
         ]);
         DB::table('tyre_axles')->insert([
-            'name' => 'Trailer'
+            'name' => 'Trailer', 'abbreviation' => 'AH'
         ]);
     }
 }

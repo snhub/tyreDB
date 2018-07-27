@@ -29,10 +29,10 @@ class Tyres extends Migration
             $table->integer('tyre_load_id')->comment('Tabelle: "tyre_load_indices"');
             $table->integer('tyre_speed_class_id')->comment('Tabelle: "tyre_speed_classes"');
             $table->boolean('regroovable')->default(true);
-            $table->integer('mileage')->comment('Laufleistung')->default(0);
-            $table->tinyInteger('tread_depth_i')->comment('Profiltiefe innen');
-            $table->tinyInteger('tread_depth_m')->comment('Profiltiefe mitte');
-            $table->tinyInteger('tread_depth_o')->comment('Profiltiefe außen');
+            $table->integer('mileage')->comment('Laufleistung')->default(10);
+            $table->decimal('tread_depth_i', 2, 1)->comment('Profiltiefe innen');
+            $table->decimal('tread_depth_m', 2, 1)->comment('Profiltiefe mitte');
+            $table->decimal('tread_depth_o', 2, 1)->comment('Profiltiefe außen');
             $table->integer('location_id')->comment('Tabelle: "tyre_locations"');
         });
         DB::statement("COMMENT ON TABLE $tableName IS 'Reifen'");

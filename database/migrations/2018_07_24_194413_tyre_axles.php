@@ -20,6 +20,7 @@ class TyreAxles extends Migration
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
             $table->string('name', 20);
+            $table->char('abbreviation', 4);
         });
         DB::statement("COMMENT ON TABLE $tableName IS 'Achse'");
     }

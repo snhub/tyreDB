@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.welcome')
 
 @section('content')
 <div class="container">
@@ -8,7 +8,7 @@
                 <div class="jumbotron">
                     <h1><strong>Entwicklungs-Seite für die Reifenlagerhaltung</strong></h1>
                 </div>
-                <div class="container">
+                <div class="container mb-5">
                     <a href="app" class="btn btn-primary btn-lg">Anwendung starten</a>
                 </div>
                 <h1>Weiterführende Links</h1>

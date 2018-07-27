@@ -11,6 +11,11 @@ class VehicleTypesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('vecicle_Types')->insert([
+            'name' => 'Motorwagen', 'abbreviation' => 'MW'
+        ]);
+        DB::table('vecicle_Types')->insert([
+            'name' => 'Anhänger', 'abbreviation' => 'AH'
+        ]);
     }
 }

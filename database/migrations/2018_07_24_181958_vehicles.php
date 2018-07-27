@@ -20,6 +20,7 @@ class Vehicles extends Migration
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
             $table->char('registration', 13);
+            $table->string('nickname', 20);
             $table->integer('model_id')->comment('Tabelle "vehicle_models"');
         });
         DB::statement("COMMENT ON TABLE $tableName IS 'Fahrzeug mit Kennzeichen'");

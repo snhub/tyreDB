@@ -11,6 +11,20 @@ class TyreModelsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('tyre_models')->insert([
+            'name' => 'Super'
+        ]);
+        DB::table('tyre_models')->insert([
+            'name' => 'Longlife'
+        ]);
+        DB::table('tyre_models')->insert([
+            'name' => 'Crazy'
+        ]);
+        DB::table('tyre_models')->insert([
+            'name' => 'Durable'
+        ]);
+        DB::table('tyre_models')->insert([
+            'name' => 'Soft'
+        ]);
     }
 }

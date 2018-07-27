@@ -11,6 +11,17 @@ class TyreLocationsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('tyre_locations')->insert([
+            'name' => 'Montiert'
+        ]);
+        DB::table('tyre_locations')->insert([
+            'name' => 'Lager'
+        ]);
+        DB::table('tyre_locations')->insert([
+            'name' => 'Nachschneiden'
+        ]);
+        DB::table('tyre_locations')->insert([
+            'name' => 'Runderneuerung'
+        ]);
     }
 }

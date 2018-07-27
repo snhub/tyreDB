@@ -20,6 +20,7 @@ class TyreModels extends Migration
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
             $table->string('name', 30);
+            $table->integer('manufacturer_id');
         });
         DB::statement("COMMENT ON TABLE $tableName IS 'Modellbezeichnung'");
     }
