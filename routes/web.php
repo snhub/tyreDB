@@ -14,10 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/', 'ListController@show');
+Route::get('/update-notes', function () {
+    return view('update-notes');
+});
+Route::get('/roadmap', function () {
+    return view('roadmap');
+});
+Route::get('app', 'AppController@show');
+#Route::get('roadmap', 'RoadmapController@show');
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
 
 
