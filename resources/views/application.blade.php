@@ -73,7 +73,7 @@
         </div>
         </section>
 
-        <h2>Section title</h2>
+        <h2>{{$tyres}}</h2>
         <div class="table-responsive">
         <table class="table table-striped">
             <thead>

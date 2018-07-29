@@ -6,6 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class TyreManufacturers extends Migration
 {
+    private $tableName = 'tyre_manufacturers';
     /**
      * Run the migrations.
      *
@@ -13,7 +14,6 @@ class TyreManufacturers extends Migration
      */
     public function up()
     {
-        $tableName = 'tyre_manufacturers';
         
         Schema::create($tableName, function (Blueprint $table) {
             $table->increments('id');

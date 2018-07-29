@@ -20,7 +20,7 @@ Route::get('/update-notes', function () {
 Route::get('/roadmap', function () {
     return view('roadmap');
 });
-Route::get('app', 'AppController@show');
+Route::get('app', 'ApplicationController@show');
 #Route::get('roadmap', 'RoadmapController@show');
 
 Auth::routes();
