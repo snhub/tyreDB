@@ -11,6 +11,12 @@ Views verwenden Layouts, also Templates, die die Webseitenerstellung vereinfache
 ### Backend
 Die Objektklassen (Reifen, Modell, Hersteller, Fahrzeug, ...) sind direkt unter app/. Sie spiegeln die Datensätze der Datenbank und erhalten hier bereits ihre Relationen (Eloquent ORM). Die Datenbank-Generierung ist in Skripten gespeichert (Migrations), wodurch man per Befehl die Datenbank löschen und wieder aufsetzen kann. Testdatenerzeugung geht hierbei über (Seeder).
 
+## Kommentare zu Technologien
+### Laravel
+Laravel ist nach Recherche das zur Zeit modernste und beliebteste PHP Framework. Es können high Level Datenbankabfragen gemacht werden. Authentifizierung, Routing, Templates (Blade), sind bereits fertig zur Anwendung und müssen lediglich konfiguriert werden. Bootstrap (Frontend), Artisan (Asset-Generierung), Mail und weitere hilfreiche Extensions sind integriert.
+### Bootstrap
+Twitter Bootstrap ist eins der bewährtesten Frontend-Frameworks, welches oft eingesetzt wird. Es ist vom Funktionsumfang her noch überschauber und sehr gut für Anwendungen, welche keine zu speziellen Anforderungen haben. Es eignet sich sehr gut für Webseiten, die auf unterschiedlichen Displays laufen sollen.
+
 ## Liste der Views
 - welcome.blade.php >> Startseite
 - application.blade.php
