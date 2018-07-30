@@ -1,5 +1,5 @@
 # tyreDB
-## Verzeichnisse
+## Relevanteste Verzeichnisse
 - App/ Datenobjekte, Controller
 - Database/ Migrations, Seeds
 - Resources/ Views
