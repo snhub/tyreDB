@@ -6,6 +6,8 @@ use Illuminate\Database\Migrations\Migration;
 
 class VehicleTypes extends Migration
 {
+    private $tableName = 'vehicle_types';
+    
     /**
      * Run the migrations.
      *
@@ -13,16 +15,12 @@ class VehicleTypes extends Migration
      */
     public function up()
     {
-        $tableName = 'vehicle_types';
-        
-        Schema::create($tableName, function (Blueprint $table) {
+        Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
             $table->string('name', 30);
             $table->char('abbreviation', 3);
         });
-        DB::statement("COMMENT ON TABLE $tableName IS '>Motorwagen<, >Anhänger<, usw.'");
+        DB::statement("COMMENT ON TABLE $this->tableName IS '>Motorwagen<, >Anhänger<, usw.'");
     }
 
     /**
@@ -32,6 +30,6 @@ class VehicleTypes extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists($tableName);
+        Schema::dropIfExists($this->tableName);
     }
 }

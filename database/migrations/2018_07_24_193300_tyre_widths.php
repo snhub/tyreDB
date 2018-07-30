@@ -6,22 +6,19 @@ use Illuminate\Database\Migrations\Migration;
 
 class TyreWidths extends Migration
 {
+    private $tableName = 'tyre_widths';
     /**
      * Run the migrations.
      *
      * @return void
      */
     public function up()
-    {
-        $tableName = 'tyre_widths';
-        
-        Schema::create($tableName, function (Blueprint $table) {
+    {   
+        Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
-            $table->decimal('width', 3, 1);
+            $table->decimal('width', 4, 1);
         });
-        DB::statement("COMMENT ON TABLE $tableName IS 'Reifenbreite'");
+        DB::statement("COMMENT ON TABLE $this->tableName IS 'Reifenbreite'");
     }
 
     /**
@@ -31,6 +28,6 @@ class TyreWidths extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists($tableName);
+        Schema::dropIfExists($this->tableName);
     }
 }

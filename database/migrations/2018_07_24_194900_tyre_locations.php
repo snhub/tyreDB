@@ -6,6 +6,8 @@ use Illuminate\Database\Migrations\Migration;
 
 class TyreLocations extends Migration
 {
+    private $tableName = 'tyre_locations';
+    
     /**
      * Run the migrations.
      *
@@ -13,15 +15,11 @@ class TyreLocations extends Migration
      */
     public function up()
     {
-        $tableName = 'tyre_locations';
-        
-        Schema::create($tableName, function (Blueprint $table) {
+        Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
             $table->string('name', 20)->unique()->notNull();
         });
-        DB::statement("COMMENT ON TABLE $tableName IS 'Aktueller Aufenthaltsort des Reifens: Montiert, Lager, zur Runderneuerung'");
+        DB::statement("COMMENT ON TABLE $this->tableName IS 'Aktueller Aufenthaltsort des Reifens: Montiert, Lager, zur Runderneuerung'");
     }
 
     /**
@@ -31,6 +29,6 @@ class TyreLocations extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists($tableName);
+        Schema::dropIfExists($this->tableName);
     }
 }

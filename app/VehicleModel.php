@@ -11,6 +11,9 @@ class VehicleModel extends Model
         'name', 'type_id'
     ];
 
-
+    public function type()
+    {
+        return $this->belongsTo('App\VehicleType');
+    }
 
 }

@@ -6,6 +6,8 @@ use Illuminate\Database\Migrations\Migration;
 
 class TyreAxles extends Migration
 {
+    private $tableName = 'tyre_axles';
+    
     /**
      * Run the migrations.
      *
@@ -13,16 +15,12 @@ class TyreAxles extends Migration
      */
     public function up()
     {
-        $tableName = 'tyre_axles';
-        
-        Schema::create($tableName, function (Blueprint $table) {
+        Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
             $table->string('name', 20);
             $table->char('abbreviation', 4);
         });
-        DB::statement("COMMENT ON TABLE $tableName IS 'Achse'");
+        DB::statement("COMMENT ON TABLE $this->tableName IS 'Achse'");
     }
 
     /**
@@ -32,6 +30,6 @@ class TyreAxles extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists($tableName);
+        Schema::dropIfExists($this->tableName);
     }
 }

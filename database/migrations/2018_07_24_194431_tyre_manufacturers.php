@@ -14,14 +14,11 @@ class TyreManufacturers extends Migration
      */
     public function up()
     {
-        
-        Schema::create($tableName, function (Blueprint $table) {
+        Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
             $table->string('name', 30);
         });
-        DB::statement("COMMENT ON TABLE $tableName IS 'Reifenhersteller'");
+        DB::statement("COMMENT ON TABLE $this->tableName IS 'Reifenhersteller'");
     }
 
     /**
@@ -31,6 +28,6 @@ class TyreManufacturers extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists($tableName);
+        Schema::dropIfExists($this->tableName);
     }
 }

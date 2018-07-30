@@ -1,0 +1,8 @@
+span {
+	background-color: rgb(131, 100, 86);
+}
+
+span:first-child {
+	background-color: rgb(57, 165, 57);
+
+}

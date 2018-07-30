@@ -17,7 +17,7 @@ class TyreAxlesTableSeeder extends Seeder
         DB::table('tyre_axles')->insert([
             'name' => 'Antriebsachse', 'abbreviation' => 'AA'
         ]);
-        DB::table('tyre_axles')->insert([
+        DB::table('tyre_axles')->insert([ 
             'name' => 'Lenkachse', 'abbreviation' => 'LA'
         ]);
         DB::table('tyre_axles')->insert([

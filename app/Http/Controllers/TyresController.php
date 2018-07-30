@@ -4,9 +4,16 @@ namespace TyreDB\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use TyreDB\Tyre;
 
-class TyreListController extends Controller
+class ApplicationController extends Controller
 {
+    public function show()
+    {
+        $tyres=Tyre::all();
+        return view('application', ['tyres' => $tyres]);
+    }
+
     /**
      * Create a new controller instance.
      *
@@ -24,7 +31,7 @@ class TyreListController extends Controller
      */
     public function index()
     {
-        $users = DB::table('users', ['users' => $users])->get();
-        return view('application');
+        $tyres=DB::table('tyres')->get();
+        return view('application', ['tyres' => $tyres]);
     }
 }

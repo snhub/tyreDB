@@ -6,6 +6,8 @@ use Illuminate\Database\Migrations\Migration;
 
 class TyreLoadIndices extends Migration
 {
+    private $tableName = 'tyre_load_indices';
+    
     /**
      * Run the migrations.
      *
@@ -13,16 +15,12 @@ class TyreLoadIndices extends Migration
      */
     public function up()
     {
-        $tableName = 'tyre_load_indices';
-        
-        Schema::create($tableName, function (Blueprint $table) {
+        Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
             $table->smallInteger('index')->unique()->nullable(false);
             $table->decimal('load', 5, 1)->nullable(false);
         });
-        DB::statement("COMMENT ON TABLE $tableName IS 'Tragfähigkeitsindex'");
+        DB::statement("COMMENT ON TABLE $this->tableName IS 'Tragfähigkeitsindex'");
     }
 
     /**
@@ -32,6 +30,6 @@ class TyreLoadIndices extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists($tableName);
+        Schema::dropIfExists($this->tableName);
     }
 }

@@ -11,6 +11,8 @@ class TyreManufacturer extends Model
         'name'
     ];
 
-
+    public function models() {
+        $this->hasMany('TyreDB\TyreModel');
+    }
 
 }

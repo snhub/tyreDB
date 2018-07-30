@@ -21,6 +21,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     
     <link href="{{ asset('css/dashboard.css')}}" rel="stylesheet">
+
+    <link href="{{ asset('css/tyre.css')}}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">

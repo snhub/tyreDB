@@ -6,11 +6,50 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="container">
                 <div class="jumbotron">
-                    <h1><strong>Update Notes</strong></h1>
+                    <h2><strong>Update Notes</strong></h2>
                     <p>Gesamtzeit: 29h</p>
                 </div>
                 <div class="container">
-                <h1>Donnerstag, 23.07.2018</h1>
+<!--Template
+                <h2>tag, ..2018</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            
+                        </li>
+                        <li class="list-group-item">
+                            
+                        </li>
+                        <li class="list-group-item">
+                            
+                        </li>
+                        <li class="list-group-item">
+
+                        </li>
+                        <li class="list-group-item">
+                            
+                        </li>
+                    </ul>
+-->
+                <h2>Wochenupdate Montag, 30.7.2018</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            Datenbank erstellt (16 Objekte)
+                        </li>
+                        <li class="list-group-item">
+                            Datenbank-Generierung (Migration), Testdaten (Seeds), Klassen, Relationen erstellt
+                        </li>
+                        <li class="list-group-item">
+                            PHP-Seite mit Tabelle der Reifen-Übersicht erstellt und Testdaten angezeigt
+                        </li>
+                        <li class="list-group-item">
+                            Webserver Konfiguration
+                        </li>
+                        <li class="list-group-item">
+                            Reifentheorie mit Datenmodellierung
+                        </li>
+                    </ul>
+                <br/>
+                <h2>Donnerstag, 23.07.2018</h2>
                     <ul class="list-group">
                         <li class="list-group-item">
                             Einarbeitung in Bootstrap
@@ -21,14 +60,9 @@
                         <li class="list-group-item">
                             Welcome-Pages schreiben
                         </li>
-                        <li class="list-group-item">
-
-                        </li>
-                        <li class="list-group-item">
-                            
-                        </li>
                     </ul>
-                <h1>Mittwoch, 23.07.2018 - 4:11h</h1>
+                <br/>
+                <h2>Mittwoch, 23.07.2018</h2>
                     <ul class="list-group">
                         <li class="list-group-item">
                             Einarbeitung in Laravel
@@ -49,7 +83,8 @@
                             Seeding von Testdaten
                         </li>
                     </ul>
-                <h1>Dienstag, 23.07.2018 - 7:32h</h1>
+                <br/>
+                <h2>Dienstag, 23.07.2018</h2>
                     <ul class="list-group">
                         <li class="list-group-item">
                             Einarbeitung in Laravel
@@ -64,16 +99,14 @@
                             Reifen-Theorie
                         </li>
                     </ul>
-                <h1>Montag, 23.07.2018 - 9:15h</h1>
+                <br/>
+                <h2>Montag, 23.07.2018</h2>
                     <ul class="list-group">
                         <li class="list-group-item">
                             Auswahl der Technologien
                         </li>
                         <li class="list-group-item">
                             Setup und Konfiguration der Entwicklungsumgebung
-                        </li>
-                        <li class="list-group-item">
-                            
                         </li>
                         <li class="list-group-item">
                             Einarbeitung in Laravel

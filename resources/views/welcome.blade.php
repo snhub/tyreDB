@@ -17,6 +17,18 @@
                     <li class="list-group-item"><h2><a href="/update-notes" class="badge badge-primary">Update Notes</a></h2></li>
                     <li class="list-group-item"><h2><a href="/roadmap" class="badge badge-primary">Roadmap</a></h2></li>
                 </ul>
+                <h1>Working</h1>
+                <ul class="list-group">
+                    <li class="list-group-item"><div class="container container-fluid"><h2><pre><span>Prototyp fertig</span><span></span></pre></h2></div></li>
+                    <li class="list-group-item"><h2></h2></li>
+                    <li class="list-group-item"><h2></h2></li>
+                </ul>
+                <h1>Known Bugs</h1>
+                <ul class="list-group">
+                    <li class="list-group-item"><h2></h2></li>
+                    <li class="list-group-item"><h2></h2></li>
+                    <li class="list-group-item"><h2></h2></li>
+                </ul>
             </div>
         </div>
     </div>

@@ -6,6 +6,8 @@ use Illuminate\Database\Migrations\Migration;
 
 class TyreSpeedClasses extends Migration
 {
+    private $tableName = 'tyre_speed_classes';
+    
     /**
      * Run the migrations.
      *
@@ -13,16 +15,12 @@ class TyreSpeedClasses extends Migration
      */
     public function up()
     {
-        $tableName = 'speed_classes';
-        
-        Schema::create($tableName, function (Blueprint $table) {
+        Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
             $table->char('clazz', 2);
             $table->smallInteger('speed');
         });
-        DB::statement("COMMENT ON TABLE $tableName IS 'Geschwindigkeitsklasse'");
+        DB::statement("COMMENT ON TABLE $this->tableName IS 'Geschwindigkeitsklasse'");
     }
 
     /**
@@ -32,6 +30,6 @@ class TyreSpeedClasses extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists($tableName);
+        Schema::dropIfExists($this->tableName);
     }
 }

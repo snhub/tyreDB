@@ -12,5 +12,8 @@ class TyreWidth extends Model
     ];
 
 
+    public function tyre() {
+        $this->hasMany('TyreDB\Tyre');
+    }
 
 }

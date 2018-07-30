@@ -11,6 +11,14 @@ class TyreModel extends Model
         'name'
     ];
 
+    public function manufacturer() {
+        return $this->belongsTo('TyreDB\TyreManufacturer');
+    }
 
+    public function tyre() {
+        return $this->hasMany('TyreDB\Tyre');
+    }
+
+    
 
 }

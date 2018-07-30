@@ -12,5 +12,8 @@ class TyreLocation extends Model
     ];
 
 
+    public function tyre() {
+        $this->hasMany('TyreDB\Tyre');
+    }
 
 }

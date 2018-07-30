@@ -8,9 +8,15 @@ class Vehicle extends Model
 {
     //protected $table = 'vehicles';
     protected $fillable = [
-        'registration', 'model_id'
+        'registration', 'nickname', 'model_id'
     ];
 
+    public function model()
+    {
+        return $this->hasOne('App\VehicleModel');
+    }
 
-
+    public function tyre() {
+        $this->hasMany('TyreDB\Tyre');
+    }
 }

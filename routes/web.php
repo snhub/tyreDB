@@ -11,15 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/update-notes', function () {
-    return view('update-notes');
-});
-Route::get('/roadmap', function () {
-    return view('roadmap');
-});
+Route::get('/', function () {return view('welcome');});
+Route::get('/update-notes', function () {return view('update-notes');});
+Route::get('/roadmap', function () {return view('roadmap');});
+Route::get('/tyres', function () {return view('tyres');});
+Route::get('/vehicles', function () {return view('vecicles');});
 Route::get('app', 'ApplicationController@show');
 #Route::get('roadmap', 'RoadmapController@show');
 
