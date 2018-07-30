@@ -1,5 +1,5 @@
 # tyreDB
-## Hinweise
+## Verzeichnisse
 - App/ Datenobjekte, Controller
 - Database/ Migrations, Seeds
 - Resources/ Views
