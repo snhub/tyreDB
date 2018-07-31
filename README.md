@@ -19,4 +19,12 @@ Twitter Bootstrap ist eins der bewährtesten Frontend-Frameworks, welches oft ei
 
 ## Liste der Views
 - welcome.blade.php >> Startseite
-- application.blade.php  >> Startseite der Anwendung
+- application.blade.php  >> Startseite der Anwendung, Übersicht
+- tyres.blade.php >> Reifen-Ansicht
+- tyre.blade.php >> Reifen-Aktionen
+- vehicles.blade.php >> Fahrzeug-Ansicht
+- vehicle.blade.php >> Fahrzeug-Aktionen
+- contractors.blade.php >> Auftragnehmer-Ansicht
+- contractor.blade.php >> Auftragnehmer-Aktionen
+- setup.blade.php >> Einstellungen
+
