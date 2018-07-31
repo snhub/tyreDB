@@ -27,4 +27,4 @@ Twitter Bootstrap ist eins der bewährtesten Frontend-Frameworks, welches oft ei
 - contractors.blade.php >> Auftragnehmer-Ansicht
 - contractor.blade.php >> Auftragnehmer-Aktionen
 - setup.blade.php >> Einstellungen
-
+- feedback.blade.php >> Message to the developer
