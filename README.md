@@ -17,6 +17,8 @@ Laravel ist nach Recherche das zur Zeit modernste und beliebteste PHP Framework.
 ### Bootstrap
 Twitter Bootstrap ist eins der bewährtesten Frontend-Frameworks, welches oft eingesetzt wird. Es ist vom Funktionsumfang her noch überschaubar und sehr gut für Anwendungen, welche keine zu speziellen Anforderungen haben. Es eignet sich sehr gut für Webseiten, die auf unterschiedlichen Displays laufen sollen.
 
+Es können grundsätzlich noch Änderungen der vorgeschlagenen Technologien gemacht werden.
+
 ## Liste der Views
 - welcome.blade.php >> Startseite
 - application.blade.php  >> Startseite der Anwendung, Übersicht
