@@ -12,8 +12,8 @@ class VehicleManufacturer extends Model
     ];
 
 
-    public function vehicle() {
-        $this->hasMany('TyreDB\Vehicle');
+    public function vehicles() {
+        $this->hasMany('TyreDB\VehicleModel');
     }
 
 }

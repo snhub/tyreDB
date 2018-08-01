@@ -6,13 +6,13 @@
     <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
         <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-            <span class="nav-link active">Übersicht</span>
+            <a class="nav-link" href="/app">Übersicht</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/tyres">Reifen</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/vehicles">Fahrzeuge</a>
+            <span class="nav-link active">Fahrzeuge</span>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Analytics</a>
@@ -58,7 +58,7 @@
     </nav>
 
     <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-        <h1>Übersicht</h1>
+        <h1>Reifen</h1>
 
         <section class="row text-center placeholders">
         <div class="col-6 col-sm-3 placeholder">
@@ -83,58 +83,31 @@
         </div>
         </section>
         <div class="table-responsive">
+        Here: $vehicles
         <table class="table table-striped">
             <thead>
             <tr>
                 <th>#</th>
+                <th><a href="/vehicles/sort?column=registration">Kennzeichen</a></th>
                 <th>Hersteller</th>
                 <th>Modell</th>
-                <th>Achse</th>
-                <th>Breite</th>
-                <th>Höhe/Brte</th>
-                <th>Rad/Dia</th>
-                <th>Durchm.</th>
-                <th>Gewichtsi.</th>
-                <th>Geschw.Kl.</th>
-                <th>Regrov.</th>
-                <th>Laufleist.</th>
-                <th>Profil i.</th>
-                <th>Profil m.</th>
-                <th>Profil a.</th>
-                <th>Ort</th>
+                <th>Achsen</th>
+                <th>Bereifung</th>
+                <th>Qualität Ber.</th>
+                <th>Laufleistung km/J</th>
             </tr>
             </thead>
             <tbody>
-            @foreach($tyres as $tyre)
+            @foreach($vehicles as $vehicle)
             <tr>
-                <td>{{$tyre->id}}</td>
-                <td>{{$tyre->model->manufacturer->name}}</td>
-                <td>{{$tyre->model->name}}</td>
-                <td>{{$tyre->axle->name}}</td>
-                <td>{{$tyre->width->width}}</td>
-                <td>{{$tyre->ratio}}</td>
-                <td>{{$tyre->rd}}</td>
-                <td>{{$tyre->diameter}}</td>
-                <td>
-                    @isset($tyre->loadIndex->load)
-                        {{$tyre->loadIndex->load}}
-                    @endisset
-                </td>
-                <td>
-                    @isset($tyre->speedClazz->speed)
-                        {{$tyre->speedClazz->speed}}
-                    @endisset
-                </td>
-                <td>{{$tyre->regroovable}}</td>
-                <td>{{$tyre->mileage}}</td>
-                <td>{{$tyre->tread_depth_i}}</td>
-                <td>{{$tyre->tread_depth_m}}</td>
-                <td>{{$tyre->tread_depth_o}}</td>
-                <td>
-                    @isset($tyre->location->name)
-                        {{$tyre->location->name}}
-                    @endisset
-                </td>
+                <td>{{$vehicle->id}}</td>
+                <td>{{$vehicle->registration}}</td>
+                <td>{{$vehicle->model->manufacturer->name}}</td>
+                <td>{{$vehicle->model->name}}</td>
+                <td>{{$vehicle->model->axles}}</td>
+                <td>{{$vehicle->model->tyres}}</td>
+                <td>{{$vehicle->quality}}</td>
+                <td>{{$vehicle->mileage}}</td>
             </tr>
             @endforeach
             </tbody>

@@ -22,8 +22,11 @@ class Tyre extends Model
         'tread_depth_i',
         'tread_depth_m',
         'tread_depth_o',
-        'location_id'
+        'location_id',
+        'vehicle_id'
     ];
+
+    public $quality;
 
     public function model()
     {

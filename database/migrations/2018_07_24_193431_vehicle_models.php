@@ -18,8 +18,12 @@ class VehicleModels extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 50)->comment('Modellbezeichnung');
-            $table->integer('type_id')->comment('Tabelle "vehicle_types"');
-            $table->integer('manufacturer_id')->comment('Tabelle "vehicle_manufacturers');
+            $table->integer('type_id')->comment('vehicle_types->id');
+            $table->foreign('type_id')->references('id')->on('vehicle_types');
+            $table->integer('manufacturer_id')->comment('vehicle_manufacturers->id');
+            $table->foreign('manufacturer_id')->references('id')->on('vehicle_manufacturers');
+            $table->tinyInteger('axles')->comment('Achszahl');
+            $table->tinyInteger('tyres')->comment('Reifenzahl');
         });
         DB::statement("COMMENT ON TABLE $this->tableName IS 'Fahrzeug-Modellbezeichungen'");
     }

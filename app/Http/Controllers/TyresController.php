@@ -6,12 +6,27 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use TyreDB\Tyre;
 
-class ApplicationController extends Controller
+class TyresController extends Controller
 {
     public function show()
     {
         $tyres=Tyre::all();
-        return view('application', ['tyres' => $tyres]);
+        foreach($tyres as $tyre) {
+            $tread_av = $tyre->quality = (($tyre->tyre_tread_depth_i
+            +$tyre->tyre_tread_depth_m
+            +$tyre->tyre_tread_depth_o)/3);
+            if($tread_av > 1.5) {
+                $tyre->quality = 'gut';
+            } elseif ($tread_av > 1) {
+                $tyre->quality = 'mittel';
+            } elseif ($tread_av > 0.6) {
+                $tyre->quality = 'schlecht';
+            } else {
+                $tyre->quality = 'Wechsel';
+            }
+        }
+
+        return view('tyres', ['tyres' => $tyres]);
     }
 
     /**
@@ -32,6 +47,6 @@ class ApplicationController extends Controller
     public function index()
     {
         $tyres=DB::table('tyres')->get();
-        return view('application', ['tyres' => $tyres]);
+        return view('tyres', ['tyres' => $tyres]);
     }
 }

@@ -14,10 +14,12 @@
 Route::get('/', function () {return view('welcome');});
 Route::get('/update-notes', function () {return view('update-notes');});
 Route::get('/roadmap', function () {return view('roadmap');});
-Route::get('/tyres', function () {return view('tyres');});
-Route::get('/vehicles', function () {return view('vecicles');});
-Route::get('app', 'ApplicationController@show');
-#Route::get('roadmap', 'RoadmapController@show');
+#Route::get('/tyres', function () {return view('tyres');});
+#Route::get('/vehicles', function () {return view('vehicles');});
+Route::get('/app', 'ApplicationController@show');
+Route::get('/tyres', 'TyresController@show');
+Route::get('/vehicles', 'VehiclesController@show');
+Route::get('/vehicles/sort', 'VehiclesController@columnSort');
 
 Auth::routes();
 

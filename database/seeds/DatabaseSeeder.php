@@ -19,10 +19,16 @@ class DatabaseSeeder extends Seeder
         $this->call(TyreSpeedClassesTableSeeder::class);
         $this->call(TyreWidthsTableSeeder::class);
         $this->call(TyreAxlesTableSeeder::class);
-        $this->call(VehicleModelsTableSeeder::class);
-        $this->call(VehiclesTableSeeder::class);
         $this->call(VehicleTypesTableSeeder::class);
         $this->call(VehicleManufacturersTableSeeder::class);
+
+        $this->call(VehicleModelsTableSeeder::class);
+
+        $this->call(VehiclesTableSeeder::class);
+
+
+
+
         $this->call(TyresTableSeeder::class);
     }
 }

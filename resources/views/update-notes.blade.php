@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="jumbotron">
                     <h2><strong>Update Notes</strong></h2>
-                    <p>Gesamtzeit: 29h</p>
+                    <p>Gesamtzeit: 43h</p>
                 </div>
                 <div class="container">
 <!--Template

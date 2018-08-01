@@ -6,10 +6,10 @@
     <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
         <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-            <span class="nav-link active">Übersicht</span>
+            <a class="nav-link" href="/app">Übersicht</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/tyres">Reifen</a>
+            <span class="nav-link active">Reifen</span>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/vehicles">Fahrzeuge</a>
@@ -58,7 +58,7 @@
     </nav>
 
     <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-        <h1>Übersicht</h1>
+        <h1>Reifen</h1>
 
         <section class="row text-center placeholders">
         <div class="col-6 col-sm-3 placeholder">

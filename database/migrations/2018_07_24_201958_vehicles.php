@@ -21,7 +21,11 @@ class Vehicles extends Migration
             $table->timestamp('updated_at');
             $table->char('registration', 13);
             $table->string('nickname', 20);
-            $table->integer('model_id')->comment('Tabelle "vehicle_models"');
+            $table->integer('mileage')->comment('Laufleistung');
+            $table->integer('type_id')->comment('vehicle_types->id');
+            $table->foreign('type_id')->references('id')->on('vehicle_types');
+            $table->integer('model_id')->comment('vehicle_models->id');
+            $table->foreign('model_id')->references('id')->on('vehicle_models');
         });
         DB::statement("COMMENT ON TABLE $this->tableName IS 'Fahrzeug mit Kennzeichen'");
     }

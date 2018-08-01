@@ -13,7 +13,14 @@ class VehicleModel extends Model
 
     public function type()
     {
-        return $this->belongsTo('App\VehicleType');
+        return $this->belongsTo('TyreDB\VehicleType');
     }
 
+    public function manufacturer() {
+        return $this->belongsTo('TyreDB\VehicleManufacturer');
+    }
+
+    public function vehicles() {
+        return $this->hasMany('TyreDB\Vehicle');
+    }
 }

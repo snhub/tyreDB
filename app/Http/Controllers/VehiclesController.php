@@ -4,14 +4,38 @@ namespace TyreDB\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use TyreDB\Tyre;
+use TyreDB\Vehicle;
+use Illuminate\Log\Writer;
 
-class ApplicationController extends Controller
+class VehiclesController extends Controller
 {
     public function show()
     {
-        $tyres=Tyre::all();
-        return view('application', ['tyres' => $tyres]);
+        $vehicles=Vehicle::all();
+        foreach($vehicles as $vehicle) {
+            foreach($vehicle->tyres as $tyre) {
+                $tread_av = $tyre->quality = (($tyre->tyre_tread_depth_i
+                +$tyre->tyre_tread_depth_m
+                +$tyre->tyre_tread_depth_o)/3);
+                if($tread_av > 1.5) {
+                    $tyre->quality = 'gut';
+                } elseif ($tread_av > 1) {
+                    $tyre->quality = 'mittel';
+                } elseif ($tread_av > 0.6) {
+                    $tyre->quality = 'schlecht';
+                } else {
+                    $tyre->quality = 'Wechsel';
+                }
+            }
+        }
+        
+        return view('vehicles', ['vehicles' => $vehicles]);
+    }
+
+    public function columnSort(Request $request) {
+        $column = $request->query('column', 'id');
+        $vehicles = Vehicle::orderBy($column, 'asc')->get();
+        return view('vehicles', ['vehicles' => $vehicles]);
     }
 
     /**
@@ -29,9 +53,9 @@ class ApplicationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $tyres=DB::table('tyres')->get();
-        return view('application', ['tyres' => $tyres]);
-    }
+    // public function index()
+    // {
+    //     $vehicles=DB::table('vehicles')->get();
+    //     return view('vehicles', ['vehicles' => $vehicles]);
+    // }
 }
