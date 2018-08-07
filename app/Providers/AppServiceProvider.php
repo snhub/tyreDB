@@ -13,7 +13,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // \Log::useFiles(env('tyreDB.log'), config('app.log_level', 'debug'));
+        // $handlers = \Log::getMonolog()->getHandlers();
+        // $handler = array_shift($handlers);
+        // $handler->setBubble(false);
     }
 
     /**

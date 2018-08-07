@@ -35,7 +35,7 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single'],
+            'channels' => ['daily'],
         ],
 
         'single' => [
@@ -51,12 +51,19 @@ return [
             'days' => 7,
         ],
 
+        'debug' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/debug.log'),
+            'level' => 'debug',
+            'days' => 7
+        ],
+
         'slack' => [
             'driver' => 'slack',
-            'url' => env('LOG_SLACK_WEBHOOK_URL'),
-            'username' => 'Laravel Log',
+            'url' => 'https://hooks.slack.com/services/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',
+            'username' => 'scout247',
             'emoji' => ':boom:',
-            'level' => 'critical',
+            'level' => 'info',
         ],
 
         'stderr' => [

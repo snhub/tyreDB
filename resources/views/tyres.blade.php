@@ -82,11 +82,11 @@
             <span class="text-muted">1%</span>
         </div>
         </section>
-        <div class="table-responsive">
+        <div>
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>#</th>
+                <th><a href="/tyres/sort?column=index">#</a></th>
                 <th>Hersteller</th>
                 <th>Modell</th>
                 <th>Achse</th>
@@ -98,10 +98,10 @@
                 <th>Geschw.Kl.</th>
                 <th>Regrov.</th>
                 <th>Laufleist.</th>
-                <th>Profil i.</th>
-                <th>Profil m.</th>
-                <th>Profil a.</th>
+                <th>Profil Ø</th>
                 <th>Ort</th>
+                <th>Fahrzeug</th>
+                <th>Qualität</th>
             </tr>
             </thead>
             <tbody>
@@ -115,44 +115,35 @@
                 <td>{{$tyre->ratio}}</td>
                 <td>{{$tyre->rd}}</td>
                 <td>{{$tyre->diameter}}</td>
-                <td>
-                    @isset($tyre->loadIndex->load)
-                        {{$tyre->loadIndex->load}}
-                    @endisset
-                </td>
-                <td>
-                    @isset($tyre->speedClazz->speed)
-                        {{$tyre->speedClazz->speed}}
-                    @endisset
-                </td>
+                <td>{{$tyre->loadIndex->load}}</td>
+                <td>{{$tyre->speedClazz->speed}}</td>
                 <td>{{$tyre->regroovable}}</td>
-                <td>{{$tyre->mileage}}</td>
-                <td>{{$tyre->tread_depth_i}}</td>
-                <td>{{$tyre->tread_depth_m}}</td>
-                <td>{{$tyre->tread_depth_o}}</td>
-                <td>
-                    @isset($tyre->location->name)
-                        {{$tyre->location->name}}
-                    @endisset
-                </td>
+                <td>{{$tyre->mileage()}}</td>
+                <td>{{$tyre->treadAv()}}</td>
+                <td>{{$tyre->location->name}}</td>
+                <td>{{$tyre->vehicle->registration}}</td>
+                <td>{{$tyre->quality}}</td>
             </tr>
             @endforeach
             </tbody>
         </table>
+        </div>
+        
         <nav aria-label="Seitennavigation">
         <ul class="pagination justify-content-end">
-            <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Zurück</a>
+            <li class="page-item{{ $nav->backDisabled}}">
+                <a class="page-link" href="tyres?page=back">Zurück</a>
             </li>
-            <li class="page-item"><a class="page-link" href="tyres?page=1">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-            <a class="page-link" href="#">Vor</a>
+            @foreach($nav->pages as $page)
+            <li class="page-item{{ $page->disabled}}">
+                <a class="page-link" href="tyres?page={{$page->name}}">{{$page->name}}</a>
+            </li>
+            @endforeach
+            <li class="page-item{{ $nav->forwardDisabled}}">
+                <a class="page-link" href="tyres?page=forward">Weiter</a>
             </li>
         </ul>
         </nav>
-        </div>
     </main>
     </div>
 </div>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d62ee38da40b3298f8e9645e328c78e8",
+    "content-hash": "4707ff0fb907a0d7776a1c9d8f21eb1c",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -365,6 +365,54 @@
                 "trusted proxy"
             ],
             "time": "2018-02-07T20:20:57+00:00"
+        },
+        {
+            "name": "frankforte/quantumphp",
+            "version": "1.0.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/frankforte/quantumphp.git",
+                "reference": "536c86a1b95eee9a41b58fbee85b580c641a824b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/frankforte/quantumphp/zipball/536c86a1b95eee9a41b58fbee85b580c641a824b",
+                "reference": "536c86a1b95eee9a41b58fbee85b580c641a824b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "QuantumPHP": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Craig Campbell",
+                    "email": "iamcraigcampbell@gmail.com",
+                    "homepage": "http://craig.is",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Frank Forte",
+                    "email": "frank.forte@gmail.com",
+                    "homepage": "https://www.frankforte.ca",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Add server side logs directly to the JavaScript console in various browsers like Firefox Quantum, without the requirement of a browser extension or add-on. A FirePHP and ChromePHP alternative for modern browsers",
+            "keywords": [
+                "logging",
+                "server log"
+            ],
+            "time": "2018-02-05T13:28:34+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",

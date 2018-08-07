@@ -11,7 +11,7 @@ class TyreLoadIndex extends Model
         'index', 'load'
     ];
 
-    public function tyre() {
+    public function tyres() {
         $this->hasMany('TyreDB\Tyre');
     }
 

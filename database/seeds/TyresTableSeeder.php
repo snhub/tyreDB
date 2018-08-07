@@ -69,7 +69,7 @@ class TyresTableSeeder extends Seeder
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s'), 
             'model_id' => 6, 'axle_id' => 2, 'width_id' => 1,
             'ratio' => 75, 'diameter' => 22.5,
-            'tyre_load_id' => 1, 'tyre_speed_class_id' => 12,
+            'tyre_load_id' => 1, 'tyre_speed_class_id' => 10,
             'regroovable' => true, 'mileage' => 100,
             'tread_depth_i' => 1, 'tread_depth_m' => 1, 'tread_depth_o' => 1,
             'location_id' => 1, 'vehicle_id' => 2
@@ -99,7 +99,7 @@ class TyresTableSeeder extends Seeder
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s'), 
             'model_id' => 9, 'axle_id' => 3, 'width_id' => 1,
             'ratio' => 75, 'diameter' => 22.5,
-            'tyre_load_id' => 3, 'tyre_speed_class_id' => 13,
+            'tyre_load_id' => 3, 'tyre_speed_class_id' => 11,
             'regroovable' => true, 'mileage' => 1000,
             'tread_depth_i' => 11, 'tread_depth_m' => 13, 'tread_depth_o' => 26,
             'location_id' => 1, 'vehicle_id' => 2
@@ -109,7 +109,7 @@ class TyresTableSeeder extends Seeder
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s'), 
             'model_id' => 10, 'axle_id' => 3, 'width_id' => 1,
             'ratio' => 75, 'diameter' => 22.5,
-            'tyre_load_id' => 6, 'tyre_speed_class_id' => 13,
+            'tyre_load_id' => 6, 'tyre_speed_class_id' => 10,
             'regroovable' => true, 'mileage' => 1000,
             'tread_depth_i' => 14, 'tread_depth_m' => 12, 'tread_depth_o' => 23,
             'location_id' => 1, 'vehicle_id' => 2
@@ -119,7 +119,7 @@ class TyresTableSeeder extends Seeder
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s'), 
             'model_id' => 11, 'axle_id' => 3, 'width_id' => 1,
             'ratio' => 75, 'diameter' => 22.5,
-            'tyre_load_id' => 4, 'tyre_speed_class_id' => 13,
+            'tyre_load_id' => 4, 'tyre_speed_class_id' => 11,
             'regroovable' => true, 'mileage' => 10000,
             'tread_depth_i' => 12, 'tread_depth_m' => 14, 'tread_depth_o' => 21,
             'location_id' => 1, 'vehicle_id' => 3
@@ -129,7 +129,7 @@ class TyresTableSeeder extends Seeder
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s'), 
             'model_id' => 12, 'axle_id' => 3, 'width_id' => 1,
             'ratio' => 70, 'diameter' => 22.5,
-            'tyre_load_id' => 4, 'tyre_speed_class_id' => 13,
+            'tyre_load_id' => 4, 'tyre_speed_class_id' => 12,
             'regroovable' => true, 'mileage' => 10000,
             'tread_depth_i' => 13, 'tread_depth_m' => 15, 'tread_depth_o' => 28,
             'location_id' => 2, 'vehicle_id' => 3

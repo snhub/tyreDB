@@ -12,7 +12,7 @@ class TyreSpeedClazz extends Model
     ];
 
 
-    public function tyre() {
+    public function tyres() {
         $this->hasMany('TyreDB\Tyre');
     }
 

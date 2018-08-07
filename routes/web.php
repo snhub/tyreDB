@@ -19,7 +19,6 @@ Route::get('/roadmap', function () {return view('roadmap');});
 Route::get('/app', 'ApplicationController@show');
 Route::get('/tyres', 'TyresController@show');
 Route::get('/vehicles', 'VehiclesController@show');
-Route::get('/vehicles/sort', 'VehiclesController@columnSort');
 
 Auth::routes();
 

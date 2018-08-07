@@ -38,6 +38,7 @@ class VehiclesController extends Controller
         return view('vehicles', ['vehicles' => $vehicles]);
     }
 
+
     /**
      * Create a new controller instance.
      *
