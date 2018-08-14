@@ -1,5 +1,9 @@
 <?php
 
+namespace TyreDB;
+
+use Debugbar;
+
 class Pagination {
 
 	private $items, $itemsPerPage, $position;
@@ -15,18 +19,17 @@ class Pagination {
 		$this->position = $position;
 
 		$numPages = ceil($items/$itemsPerPage);
-
 		if($numPages <= 5) {
-			for($i = 1; $i <=5; $i++) {
-				$pages[$i] = ['name' => $i, 'disabled' => ''];
+			for($i = 1; $i <= $numPages; $i++) {
+				$this->pages[$i] = ['name' => $i, 'disabled' => ''];
 			}
 			if($position == 1) {
 				$this->backDisabled = 'disabled';
 			} elseif($position == $numPages) {
 				$this->forwardDisabled = 'disabled';
 			}
-			$pages[$position][disabled] = 'disabled';
-			
+			$this->pages[$position]['disabled'] = 'disabled';
+
 		} else {
 
 		}

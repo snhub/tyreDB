@@ -5,14 +5,15 @@ namespace TyreDB\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use TyreDB\Tyre;
-use Illuminate\Support\Facades\Log;
-use TyreDB\ControllerUtils as Utils;
+use TyreDB\Http\Controllers\ControllerUtils as Utils;
+use TyreDB\Pagination;
+use Debugbar;
 
 class TyresController extends Controller
 {
 
 
-    public function navigate(Request $request) {
+    public function paginationigate(Request $request) {
         if (isset($_REQUEST['page']))
         {
             // param was set in the query string
@@ -59,21 +60,22 @@ class TyresController extends Controller
      */
     public function show()
     {
-        Log::channel('debug')->info('show', $_REQUEST);
-        Log::channel('slack')->info('hi');
+        // Log::channel('debug')->info('show', $_REQUEST);
+        // Log::channel('slack')->info('hi');
         $tyres = [];
         $numTyres = Tyre::count();
         $datasetsPerPage = Utils::getSessionAttribute('datasetsPerPage', 10); //todo: 10 for development, prop. better 25
+        $pagination = new Pagination($numTyres, $datasetsPerPage, 1);
         if (isset($_REQUEST['page']))
         {
             if(!empty($_REQUEST['page']))
             {
-                $page = $request->query('page');
+                $page = $_REQUEST['page'];
                 // test for request parameter hack
                 if (Utils::validateIntRequestParameter($page, 1, ceil($numTyres/$datasetsPerPage))) {
                     return view('welcome'); //todo: test request parameter hack
                 }
-                return $this->pageRequest($request, $page);
+                return $this->pageRequest($_REQUEST, $page);
             }
         }
         $columnSortOrder = ['id' => 'asc'];
@@ -82,8 +84,8 @@ class TyresController extends Controller
         {
             if(!empty($_REQUEST['column']))
             {
-                $column = $request->query('column', 'id');
-                $column = self::$colProtectSQL[$column];
+                $column = $_REQUEST['column'];
+                $column = Utils::$colProtectSQL[$column];
                 if (session()->has('columnSortOrder')) {
                     $columnSortOrder = session()->get('columnSortOrder');
                     if (empty($columnSortOrder[$column])) {
@@ -98,9 +100,9 @@ class TyresController extends Controller
                 }
             }
         }
-        $tyres = Tyre::orderBy($column, $columnSortOrder[$column])->get();
+        $tyres = Tyre::orderBy($column, $columnSortOrder[$column])->skip(10)->take(10)->get();
         $this->calculateTyreVariables($tyres);
-        return view('tyres', ['tyres' => $tyres]);
+        return view('tyres', ['tyres' => $tyres, 'pagination' => $pagination]);
     }
 
     function calculateTyreVariables($tyres) {

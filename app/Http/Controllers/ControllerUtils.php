@@ -3,7 +3,7 @@
 namespace TyreDB\Http\Controllers;
 
 use PHPUnit\Framework\MockObject\Stub\Exception;
-
+use Debugbar;
 
 class ControllerUtils {
 	
@@ -36,21 +36,22 @@ class ControllerUtils {
 	}
 
 	static function getSessionAttribute($name, $default) {
+
+		if (session()->has($name)) {
+			$attr = session()->get($name);
+			if (empty($attr)) {
+				$attr = $default;
+			}
+			return $attr;
+		} else {
+			session([$name => $default]);
+		}
 		switch ($name) {
 			case 'columnSortOrder':
 				
 				break;
 
 			case 'datasetsPerPage':
-				if (session()->has($name)) {
-					$attr = session()->get($name);
-					if (empty($attr)) {
-						$attr = $default;
-					}
-					return $attr;
-				} else {
-					session([$name => $default]);
-				}
 				break;
 			
 			default:
