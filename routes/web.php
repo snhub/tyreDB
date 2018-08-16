@@ -14,11 +14,13 @@
 Route::get('/', function () {return view('welcome');});
 Route::get('/update-notes', function () {return view('update-notes');});
 Route::get('/roadmap', function () {return view('roadmap');});
-#Route::get('/tyres', function () {return view('tyres');});
-#Route::get('/vehicles', function () {return view('vehicles');});
+Route::get('/developmentTools', function () {return view('developmentTools');});
 Route::get('/app', 'ApplicationController@show');
 Route::get('/tyres', 'TyresController@show');
 Route::get('/vehicles', 'VehiclesController@show');
+Route::get('/developmentTools/migrate', 'DevelopmentToolsController@migrate');
+Route::get('/developmentTools/seed', 'DevelopmentToolsController@seed');
+Route::get('/developmentTools/seedBridgestone', 'DatabaseSeedController@seedBridgestone');
 
 Auth::routes();
 

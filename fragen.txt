@@ -11,4 +11,5 @@ Welche Reifentypen gibt es?
 
 Ist Doppelbereifung eine Eigenschaft eines einzelnen Reifens, also gibt es Reifen, die einzig für Doppelbereifung vorgesehen sind oder werden da zwei normale Reifen genommen?
 
-Sollen Felgen auch erfasst werden?
+Es wäre nützlich
+Gibt es die Bestandsdaten bereits elektronisch oder müssen die noch erfasst werden?

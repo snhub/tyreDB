@@ -274,5 +274,25 @@ class TyresTableSeeder extends Seeder
             'tread_depth_i' => 7, 'tread_depth_m' => 8, 'tread_depth_o' => 19,
             'location_id' => 1, 'vehicle_id' => 6
         ]);
+//        DB::table($this->tableName)->insert([
+//            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+//            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+//            'model_id' => , 'axle_id' => , 'width_id' => ,
+//            'ratio' => 80, 'diameter' => 295,
+//            'tyre_load_id' => 152, 'tyre_speed_class_id' => 1,
+//            'regroovable' => true, 'mileage' => 1,
+//            'tread_depth_i' => 7, 'tread_depth_m' => 7, 'tread_depth_o' => 7,
+//            'location_id' => 1, 'vehicle_id' => 0
+//        ]);
+//        DB::table($this->tableName)->insert([
+//            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+//            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+//            'model_id' => , 'axle_id' => , 'width_id' => ,
+//            'ratio' => , 'diameter' => ,
+//            'tyre_load_id' => , 'tyre_speed_class_id' => ,
+//            'regroovable' => true, 'mileage' => 1,
+//            'tread_depth_i' => 7, 'tread_depth_m' => 7, 'tread_depth_o' => 7,
+//            'location_id' => 1, 'vehicle_id' => 0
+//        ]);
     }
 }

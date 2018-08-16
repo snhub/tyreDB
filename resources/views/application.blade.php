@@ -15,10 +15,10 @@
             <a class="nav-link" href="/vehicles">Fahrzeuge</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Analytics</a>
+            <a class="nav-link" href="#">Statistik</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Export</a>
+            <a class="nav-link" href="/developmentTools">Development Tools</a>
         </li>
         </ul>
 

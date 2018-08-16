@@ -13,7 +13,7 @@ class TyresController extends Controller
 {
 
 
-    public function paginationigate(Request $request) {
+    public function pagination(Request $request) {
         if (isset($_REQUEST['page']))
         {
             // param was set in the query string
@@ -24,36 +24,6 @@ class TyresController extends Controller
         }
     }
     
-    public function columnSort(Request $request) {
-        if (isset($_REQUEST['column']))
-        {
-            // param was set in the query string
-            if(!empty($_REQUEST['column']))
-            {
-                $column = $request->query('column', 'id');
-                $column = self::$colProtectSQL[$column];
-                $columnSortOrder = [];
-                if (session()->has('columnSort')) {
-                    $columnSortOrder = session()->get('columnSort');
-                    if (empty($columnSortOrder[$column])) {
-                        $columnSortOrder[$column] = 'asc';
-                    } else {
-                        $columnSortOrder[$column] = ($columnSortOrder[$column] === 'asc') ? 'desc' : 'asc';
-                    }
-                    session(['columnSort' => $columnSortOrder]);
-                } else {
-                    $columnSortOrder[$column] = 'asc';
-                    session(['columnSort' => [$column => 'asc']]);
-                }
-                $tyres = Tyre::orderBy($column, $columnSortOrder[$column])->get();
-                calculateTyreVariables($tyres);
-                return view('tyres', ['tyres' => $tyres]);
-            }
-        }
-        // $tyres = Tyre::all();
-        // return view('tyres', ['tyres' => $tyres]);
-        $this->show();
-    }
     /**
      * Controller for all /tyres requests.
      * 
@@ -61,7 +31,7 @@ class TyresController extends Controller
     public function show()
     {
         // Log::channel('debug')->info('show', $_REQUEST);
-        // Log::channel('slack')->info('hi');
+        // Log::channel('slack')->info('hi'); // works!
         $tyres = [];
         $numTyres = Tyre::count();
         $datasetsPerPage = Utils::getSessionAttribute('datasetsPerPage', 10); //todo: 10 for development, prop. better 25
@@ -101,28 +71,10 @@ class TyresController extends Controller
             }
         }
         $tyres = Tyre::orderBy($column, $columnSortOrder[$column])->skip(10)->take(10)->get();
-        $this->calculateTyreVariables($tyres);
+        Utils::calculateTyreVariables($tyres);
         return view('tyres', ['tyres' => $tyres, 'pagination' => $pagination]);
     }
 
-    function calculateTyreVariables($tyres) {
-        foreach($tyres as $tyre) {
-            $tread_av = ControllerUtils::calculateTreadAverage(
-                $tyre->tread_depth_i,
-                $tyre->tread_depth_m,
-                $tyre->tread_depth_o);
-                $tyre->treadAvx = $tread_av;
-            if($tyre->treadAvx > 6) {
-                $tyre->quality = 'gut';
-            } elseif ($tyre->treadAvx > 3) {
-                $tyre->quality = 'mittel';
-            } elseif ($tyre->treadAvx > 0.6) {
-                $tyre->quality = 'schlecht';
-            } else {
-                $tyre->quality = 'Wechsel';
-            }
-        }
-    }
 
     /**
      * Create a new controller instance.
@@ -134,14 +86,4 @@ class TyresController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $tyres=DB::table('tyres')->get();
-        return view('tyres', ['tyres' => $tyres]);
-    }
 }

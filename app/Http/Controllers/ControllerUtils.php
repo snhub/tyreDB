@@ -66,5 +66,25 @@ class ControllerUtils {
 		$av = ($inner +$middle +$outer)/3;
 		return $av;
 	}
+	
+	
+	static function calculateTyreVariables($tyres) {
+		foreach($tyres as $tyre) {
+			$tread_av = ControllerUtils::calculateTreadAverage(
+					$tyre->tread_depth_i,
+					$tyre->tread_depth_m,
+					$tyre->tread_depth_o);
+			$tyre->treadAvx = $tread_av;
+			if($tyre->treadAvx > 6) {
+				$tyre->quality = 'gut';
+			} elseif ($tyre->treadAvx > 3) {
+				$tyre->quality = 'mittel';
+			} elseif ($tyre->treadAvx > 0.6) {
+				$tyre->quality = 'schlecht';
+			} else {
+				$tyre->quality = 'Wechsel';
+			}
+		}
+	}
 
 }

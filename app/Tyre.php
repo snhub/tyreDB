@@ -4,6 +4,29 @@ namespace TyreDB;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Tyre
+ * @package TyreDB
+ * @property $id
+ * @property $created_at
+ * @property $updated_at
+ * @property $code
+ * @property $model_id
+ * @property $axle_id
+ * @property $width_id
+ * @property $ratio
+ * @property $rd
+ * @property $diameter
+ * @property $tyre_load_id
+ * @property $tyre_speed_class_id
+ * @property $regroovable
+ * @property $mileage
+ * @property $tread_depth_i
+ * @property $tread_depth_o
+ * @property $tread_depth_m
+ * @property $location_id
+ * @property $vehicle_id
+ */
 class Tyre extends Model
 {
     //protected $table = 'tyres';
@@ -71,6 +94,10 @@ class Tyre extends Model
 
     public function mileage() {
         return number_format($this->mileage);
+    }
+    
+    public function createDate() {
+    	return date('d-m-Y', strtotime($this->created_at));
     }
 
 }

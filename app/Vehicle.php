@@ -4,6 +4,17 @@ namespace TyreDB;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Vehicle
+ * @package TyreDB
+ * @property $id
+ * @property $created_at
+ * @property $updated_at
+ * @property $registration
+ * @property $nickname
+ * @property $model_id
+ * @property $mileage
+ */
 class Vehicle extends Model
 {
     //protected $table = 'vehicles';
