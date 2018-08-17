@@ -4,6 +4,11 @@ namespace TyreDB;
 
 use Debugbar;
 
+/**
+ * Class Pagination
+ * @package TyreDB
+ * Used by view (tyres.blade)
+ */
 class Pagination {
 
 	private $items, $itemsPerPage, $position;
@@ -21,7 +26,7 @@ class Pagination {
 		$numPages = ceil($items/$itemsPerPage);
 		if($numPages <= 5) {
 			for($i = 1; $i <= $numPages; $i++) {
-				$this->pages[$i] = ['name' => $i, 'disabled' => ''];
+				$this->pages[$i] = ['number' => $i, 'disabled' => ''];
 			}
 			if($position == 1) {
 				$this->backDisabled = 'disabled';

@@ -26,7 +26,8 @@
 </head>
 <body>
 <div id="app">
-	<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+	<nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #97C3E6">
+		{{--<img src="{{URL::asset('/img/flamm-logo.png')}}" style="height:60px">--}}
 		<div class="container">
 			<a class="navbar-brand" href="{{ url('/') }}"> {{ config('app.name',
 					'TyreDB') }} </a>

@@ -3,7 +3,7 @@
 @section('content')
 	<div class="container-fluid">
 		
-		<!-- Left Navigation -->
+		{{-- Left Navigation --}}
 		<nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
 			<ul class="nav nav-pills flex-column">
 				<li class="nav-item">
@@ -58,7 +58,7 @@
 			</ul>
 		</nav>
 		
-		<!-- New/Edit Dataset Modal -->
+		{{-- New/Edit Dataset Modal --}}
 		<div class="modal fade" id="newEditDatasetModal" tabindex="-1" role="dialog" aria-labelledby="newEditDatasetModal" aria-hidden="true">
 			<div class="modal-dialog modal-lg" role="document">
 				<div class="modal-content">
@@ -171,10 +171,11 @@
 				</div>
 			</div>
 		</div>
+		
 		<main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
 			<h1>Reifen</h1>
 			
-			<!-- Filter Form -->
+			{{-- Filter Form --}}
 			<div class="row-full collapse" id="filterForm">
 				<form>
 					<div class="form-group row">
@@ -276,47 +277,38 @@
 				</form>
 			</div>
 			
-			<!-- Button Row -->
+			{{-- Button Row --}}
 			<div class="row">
+				{{-- Delete Button --}}
 				<div class="col">
 					<a href="#" class="btn btn-primary mr-1" role="button" data-toggle="modal" data-target="#newEditDatasetModal">Neu</a>
 					<button type="submit" class="btn btn-primary">Auswahl löschen</button>
 				</div>
+				{{-- Filter Button --}}
 				<div class="col">
 					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#filterForm" aria-expanded="false" aria-controls="collapseExample">Filter &Delta;</button>
 				</div>
+				{{-- Top Pagination/Datasets per page--}}
 				<div class="col">
 					<div class="d-flex flex-row-reverse">
-						<nav aria-label="Listennavigation">
-							<ul class="pagination justify-content-end">
-								<li class="page-item{{ $pagination->backDisabled}}">
-									<a class="page-link" href="tyres?page=back">Zurück</a>
-								</li>
-								@foreach($pagination->pages as $page)
-									<li class="page-item{{ $page['disabled']}}">
-										<a class="page-link" href="tyres?page={{$page['name']}}">{{$page['name']}}</a>
-									</li>
-								@endforeach
-								<li class="page-item{{ $pagination->forwardDisabled}}">
-									<a class="page-link" href="tyres?page=forward">Weiter</a>
-								</li>
-							</ul>
-						</nav>
-						<div class="dropdown p-r-3">
-							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+						{{-- Pagination --}}
+						{{$tyres->links()}}
+						{{-- Datasets per page --}}
+						<div class="dropdown p-r-3 pr-4">
+							<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
 							        data-toggle="dropdown" aria-haspopup="true"
-							        aria-expanded="false">10	</button>
+							        aria-expanded="false">{{$datasetsPerPage}}</button>
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								<a class="dropdown-item" href="#">25</a>
-								<a class="dropdown-item" href="#">50</a>
-								<a class="dropdown-item" href="#">100</a>
+								<a class="dropdown-item" href="/tyres?datasets=10">10</a>
+								<a class="dropdown-item" href="/tyres?datasets=25">25</a>
+								<a class="dropdown-item" href="/tyres?datasets=50">50</a>
+								<a class="dropdown-item" href="/tyres?datasets=100">100</a>
 							</div>
 						</div>
 						<div class="p-2"><p class="text-center">Datensätze pro Seite:</p></div>
 					</div>
 				</div>
 			</div>
-			
 			<!-- Datasets Table -->
 			<div>
 				<table class="table table-striped">
@@ -327,10 +319,7 @@
 						<th>Hersteller</th>
 						<th>Modell</th>
 						<th>Achse</th>
-						<th>Breite</th>
-						<th>Höhe/Brte</th>
-						<th>Rad/Dia</th>
-						<th>Durchm.</th>
+						<th>Metrik</th>
 						<th>Gewichtsi.</th>
 						<th>Geschw.Kl.</th>
 						<th>Regrov.</th>
@@ -349,17 +338,18 @@
 							<td>{{$tyre->model->manufacturer->name}}</td>
 							<td>{{$tyre->model->name}}</td>
 							<td>{{$tyre->axle->name}}</td>
-							<td>{{$tyre->width->width}}</td>
-							<td>{{$tyre->ratio}}</td>
-							<td>{{$tyre->rd}}</td>
-							<td>{{$tyre->diameter}}</td>
+							<td>{{$tyre->metricString}}</td>
 							<td>{{$tyre->loadIndex->load}}</td>
 							<td>{{$tyre->speedClazz->speed}}</td>
 							<td>{{$tyre->regroovable}}</td>
 							<td>{{$tyre->mileage()}}</td>
 							<td>{{$tyre->treadAv()}}</td>
 							<td>{{$tyre->location->name}}</td>
-							<td>{{$tyre->vehicle->registration}}</td>
+							@if($tyre->vehicle != null)
+								<td>{{$tyre->vehicle->registration}}</td>
+							@else
+								<td>-</td>
+							@endif
 							<td>{{$tyre->quality}}</td>
 						</tr>
 					@endforeach
@@ -367,28 +357,16 @@
 				</table>
 			</div>
 			
-			<!-- Pagination Buttons -->
+			<!-- Bottom Pagination -->
 			<div class="row">
-				<div class="col-6">
+				<div class="col">
 					<button type="button" class="btn btn-secondary btn-lg">Seitenanfang</button>
 				</div>
-				<div class="col-6">
-					<nav aria-label="Seitennavigation">
-						<ul class="pagination justify-content-end">
-							<li class="page-item{{ $pagination->backDisabled}}">
-								<a class="page-link" href="tyres?page=back">Zurück</a>
-							</li>
-							@foreach($pagination->pages as $page)
-								<li class="page-item{{ $page['disabled']}}">
-									<a class="page-link" href="tyres?page={{$page['name']}}">{{$page['name']}}</a>
-								</li>
-							@endforeach
-							<li class="page-item{{ $pagination->forwardDisabled}}">
-								<a class="page-link" href="tyres?page=forward">Weiter</a>
-							</li>
-						</ul>
-					</nav>
+				<div class="col pagination justify-content-end">
+					{{$tyres->links()}}
 				</div>
+				{{--@component('pagination-component', ['pagination' => $pagination])--}}
+				{{--@endcomponent--}}
 			</div>
 		</main>
 	</div>
