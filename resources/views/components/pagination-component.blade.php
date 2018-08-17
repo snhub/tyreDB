@@ -1,4 +1,4 @@
-
+{{-- Not used - for reference --}}
 <nav class="col" aria-label="Listennavigation">
 	<ul class="pagination justify-content-end">
 		<li class="page-item{{ $pagination->backDisabled}}">

@@ -15,7 +15,7 @@ Route::get('/', function () {return view('welcome');});
 Route::get('/update-notes', function () {return view('update-notes');});
 Route::get('/roadmap', function () {return view('roadmap');});
 Route::get('/developmentTools', function () {return view('developmentTools');});
-Route::get('/app', 'ApplicationController@show');
+Route::get('/overview', 'OverviewController@show');
 Route::get('/tyres', 'TyresController@show');
 Route::get('/vehicles', 'VehiclesController@show');
 Route::get('/developmentTools/migrate', 'DevelopmentToolsController@migrate');

@@ -6,12 +6,12 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use TyreDB\Tyre;
 
-class ApplicationController extends Controller
+class OverviewController extends Controller
 {
     public function show()
     {
         $tyres=Tyre::all();
-        return view('application', ['tyres' => $tyres]);
+        return view('overview', ['tyres' => $tyres]);
     }
 
     /**

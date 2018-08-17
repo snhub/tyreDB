@@ -1,8 +1,45 @@
-span {
-	background-color: rgb(131, 100, 86);
+a {
+    color: #3b70a2;
 }
 
-span:first-child {
-	background-color: rgb(57, 165, 57);
+a:hover {
+    color: #2e6295;
+}
+
+.btn-primary {
+    background: #97C3E6;
+    border-color: #2e6295;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #2e6295;
+    border-color: #2e6295; /*set the color you want here*/
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+
+    color: #fff;
+    background-color: #2e6295;
+    border-color: #2e6295;
+
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #97C3E6;
+}
+
+.page-link {
+
+    color: #3b70a2;
+    text-decoration: none;
+
+}
+.page-item.active .page-link {
+
+    z-index: 1;
+    color: #fff;
+    background-color: #97C3E6;
+    border-color: #2e6295;
 
 }
