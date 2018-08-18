@@ -11,7 +11,7 @@
 			{{-- New Dataset Modal --}}
 			@component('components.modal-lg')
 				@slot('id') newEditDatasetModal @endslot
-				@slot('title') Neuer Datensats @endslot
+				@slot('title') Neuer Datensatz @endslot
 				@slot('approveButtonCaption') Senden @endslot
 				@slot('dismissButtonCaption') Abbrechen @endslot
 				@slot('body')
@@ -168,7 +168,7 @@
 					@endcomponent {{-- </components.header --}}
 					@component('components.collapsable')
 						{{-- Filter Form --}}
-						@slot('name') filterForm @endslot
+						@slot('id') filterForm @endslot
 						@slot('content')
 							<form>
 								<div class="form-group row">
