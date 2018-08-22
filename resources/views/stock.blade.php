@@ -3,8 +3,8 @@
 @section('content')
 	@component('components.left-nav')
 		@slot('overviewActive')  @endslot
-		@slot('tyresActive') active @endslot
-		@slot('vehiclesActive')  @endslot
+		@slot('stockActive') active @endslot
+		@slot('garageActive')  @endslot
 	@endcomponent
 	@component('components.main-container')
 		@slot('content')
@@ -115,13 +115,13 @@
 				@slot('content')
 					@component('components.header')
 						@slot('title')
-							Reifen
+							Bestand
 						@endslot
 						@slot('actionsBar')
 							@component('components.header.start')
 								@slot('content')
 									{{-- New-, Delete- Buttons --}}
-									<div><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#newEditDatasetModal">Neu</a></div>
+									<div class=""><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#newEditDatasetModal">Neu</a></div>
 									<div class="p-2"><p class="text-center" style="white-space:nowrap">Auswahl:</p></div>
 									<div class="dropdown p-0 p-r-3 pr-4">
 										<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

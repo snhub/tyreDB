@@ -3,12 +3,12 @@
 @section('content')
 	@component('components.left-nav')
 		@slot('overviewActive')  @endslot
-		@slot('tyresActive') active @endslot
-		@slot('vehiclesActive')  @endslot
+		@slot('stockActive') active @endslot
+		@slot('garageActive')  @endslot
 	@endcomponent
 	@component('components.main-container')
 		@slot('content')
-			{{-- Modal goes here --}}
+			{{-- Modal if needed --}}
 			@component('components.modal-lg')
 				@slot('id') Modal id @endslot
 				@slot('title') Modal title @endslot
@@ -21,12 +21,13 @@
 			@component('components.main') {{-- <main> --}}
 			{{-- Page content from here --}}
 			@slot('content')
+				{{-- Page header goes here --}}
 				@component('components.header')
 					@slot('title')
 						PageTitle
 					@endslot
 					@slot('actionsBar')
-						@component('components.header.start')
+						@component('components.header.start-3col')
 							@slot('content')
 								{{-- Actions bar left items go here --}}
 							@endslot

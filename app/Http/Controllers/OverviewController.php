@@ -10,8 +10,7 @@ class OverviewController extends Controller
 {
     public function show()
     {
-        $tyres=Tyre::all();
-        return view('overview', ['tyres' => $tyres]);
+        return view('overview');
     }
 
     /**
@@ -24,14 +23,4 @@ class OverviewController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $tyres=DB::table('tyres')->get();
-        return view('application', ['tyres' => $tyres]);
-    }
 }

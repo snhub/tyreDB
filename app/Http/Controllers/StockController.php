@@ -10,7 +10,7 @@ use TyreDB\Http\Controllers\ControllerUtils as Utils;
 use TyreDB\Pagination;
 use Debugbar;
 
-class TyresController extends Controller
+class StockController extends Controller
 {
 	
 	
@@ -71,7 +71,7 @@ class TyresController extends Controller
 		//$tyres = Tyre::orderBy($sessionSortColumn, $sessionSortColumnOrder)->skip(($sessionPaginationPage-1)*$sessionDatasetsPerPage)->take($sessionDatasetsPerPage)->get();
 		$tyres = Tyre::orderBy($sessionSortColumn, $sessionSortColumnOrder)->paginate($sessionDatasetsPerPage);
 		Utils::calculateTyreVariables($tyres);
-		return view('tyres', ['tyres' => $tyres, 'pagination' => $pagination, 'datasetsPerPage' => $sessionDatasetsPerPage]);
+		return view('stock', ['tyres' => $tyres, 'pagination' => $pagination, 'datasetsPerPage' => $sessionDatasetsPerPage]);
 	}
 	
 	

@@ -5,7 +5,7 @@ namespace TyreDB\Http\Controllers;
 use Illuminate\Http\Request;
 use TyreDB\Vehicle;
 
-class VehiclesController extends Controller
+class GarageController extends Controller
 {
     public function show()
     {
@@ -27,13 +27,13 @@ class VehiclesController extends Controller
             }
         }
         
-        return view('vehicles', ['vehicles' => $vehicles]);
+        return view('garage', ['vehicles' => $vehicles]);
     }
 
     public function columnSort(Request $request) {
         $column = $request->query('column', 'id');
         $vehicles = Vehicle::orderBy($column, 'asc')->get();
-        return view('vehicles', ['vehicles' => $vehicles]);
+        return view('garage', ['vehicles' => $vehicles]);
     }
 
 

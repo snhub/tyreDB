@@ -34,7 +34,7 @@
 		<a class="navbar-brand" href="{{ url('/') }}" style="padding-top: 7px">
 			<img src="{{URL::asset('/img/tyreDB.png')}}" height="30" alt="Brand TyreDB">
 		</a>
-		<div class="container-fluid">
+		<div class="container">
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -48,7 +48,7 @@
 					<!-- rechts von "TyreDB" -->
 				</ul>
 				<!-- Right Side Of Navbar -->
-				<ul class="navbar-nav ml-auto">
+				<ul class="navbar-nav">
 					<!-- Authentication Links -->
 					@guest
 						<li class="nav-item"><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>

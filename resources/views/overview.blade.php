@@ -1,88 +1,87 @@
 @extends('layouts.app')
 
 @section('content')
-	{{-- Left Navigation --}}
 	@component('components.left-nav')
 		@slot('overviewActive') active @endslot
-		@slot('tyresActive')  @endslot
-		@slot('vehiclesActive')  @endslot
-	
+		@slot('stockActive')  @endslot
+		@slot('garageActive')  @endslot
 	@endcomponent
-	@component('components.main-container') {{-- container-fluid --}}
-	@slot('content')
-		{{-- Modals go here --}}
-		@component('components.main') {{-- <main ...> --}}
+	@component('components.main-container')
 		@slot('content')
-			@component('components.header')
-				@slot('title')
-					{{-- Title goes here --}}
-				@endslot
-				@slot('actionsBar')
-					{{-- Acitons/Buttons go here --}}
-				@endslot
-			@endcomponent {{-- header --}}
-			@component('components.collapsable')
-				@slot('content')
-					{{-- Collapsable if needed - Collapsable button template inside component file --}}
-				@endslot
-			@endcomponent
-			<!-- Datasets Table -->
-			<div>
-				<table class="table table-striped">
-					<thead>
-					<tr>
-						<th><input type="checkbox" onclick="datasetSelectToggle(this)" value="" id="{code}"></th>
-						<th><a href="/tyres?column=date">Datum</a></th>
-						<th>Hersteller</th>
-						<th>Modell</th>
-						<th>Achse</th>
-						<th>Metrik</th>
-						<th>Gewichtsi.</th>
-						<th>Geschw.Kl.</th>
-						<th>Regrov.</th>
-						<th>Laufleist.</th>
-						<th>Profil Ø</th>
-						<th>Ort</th>
-						<th>Fahrzeug</th>
-						<th>Qualität</th>
-					</tr>
-					</thead>
-					<tbody>
-					@foreach($tyres as $tyre)
-						<tr>
-							<td><input type="checkbox" name="datasetSelect" value="" id="{code}"></td>
-							<td><a href="">{{$tyre->createDate()}}</a></td>
-							<td>{{$tyre->model->manufacturer->name}}</td>
-							<td>{{$tyre->model->name}}</td>
-							<td>{{$tyre->axle->name}}</td>
-							<td>{{$tyre->metricString}}</td>
-							<td>{{$tyre->loadIndex->load}}</td>
-							<td>{{$tyre->speedClazz->speed}}</td>
-							<td>{{$tyre->regroovable}}</td>
-							<td>{{$tyre->mileage()}}</td>
-							<td>{{$tyre->treadAv()}}</td>
-							<td>{{$tyre->location->name}}</td>
-							@if($tyre->vehicle != null)
-								<td>{{$tyre->vehicle->registration}}</td>
-							@else
-								<td>-</td>
-							@endif
-							<td>{{$tyre->quality}}</td>
-						</tr>
-					@endforeach
-					</tbody>
-				</table>
-			</div>
-			@component('components.footer')
-				@slot('columnRight')
-					<div class="col pagination justify-content-end">
-						{{$tyres->links()}}
-					</div>
-				@endslot
-			@endcomponent
+			{{-- Modal if needed --}}
+			@component('components.main') {{-- <main> --}}
+			{{-- Page content from here --}}
+			@slot('content')
+				{{-- Page header goes here --}}
+				@component('components.header-sole')
+					@slot('title')
+						Übersicht
+					@endslot
+				@endcomponent {{-- </components.header --}}
+				
+				{{-- Page body goes here --}}
+				<div class="container">
+					<table class="table table-striped table-hover table-sm">
+						<tbody>
+							<tr>
+								<th>Anzahl Fahrzeuge</th>
+								<td>40</td>
+							</tr>
+							<tr>
+								<th>Reifen gesamt</th>
+								<td>364</td>
+							</tr>
+							<tr>
+								<th>Reifen montiert</th>
+								<td>324</td>
+							</tr>
+							<tr>
+								<th>Reifen im Lager</th>
+								<td>28</td>
+							</tr>
+							<tr>
+								<th>Reifen zur Runderneuerung</th>
+								<td>4</td>
+							</tr>
+							<tr>
+								<th>Reifen zum Nachschneiden</th>
+								<td>8</td>
+							</tr>
+							<tr>
+								<th>Reifen mit Qualität gut</th>
+								<td>282</td>
+							</tr>
+							<tr>
+								<th>Reifen mit Qualität mittel</th>
+								<td>38</td>
+							</tr>
+							<tr>
+								<th>Reifen mit Qualität durchschnittlich</th>
+								<td>16</td>
+							</tr>
+							<tr>
+								<th>Reifen mit Qualität ausreichend</th>
+								<td>16</td>
+							</tr>
+							<tr>
+								<th>Reifen, die gewechselt werden sollten</th>
+								<td>12</td>
+							</tr>
+							<tr>
+								<th>Offene Werkstattaufträge</th>
+								<td>4</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				@component('components.footer')
+					@slot('columnRight')
+						{{-- Footer content right side goes here --}}
+					@endslot
+				@endcomponent
+			@endslot
+			@endcomponent {{-- </components.main --}}
 		@endslot
-		@endcomponent {{-- <main ...> --}}
-	@endslot
-	@endcomponent {{-- main-container --}}
+	@endcomponent {{-- </components.main-container --}}
 
 @endsection
