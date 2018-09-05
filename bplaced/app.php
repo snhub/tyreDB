@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://flammreifensoft.bplaced.net'),
+    'url' => env('APP_URL', 'http://tyredb.digi-craft.de'),
 
     /*
     |--------------------------------------------------------------------------
