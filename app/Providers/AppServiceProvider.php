@@ -3,6 +3,7 @@
 namespace TyreDB\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
         // $handlers = \Log::getMonolog()->getHandlers();
         // $handler = array_shift($handlers);
         // $handler->setBubble(false);
+	    Schema::defaultStringLength(191);
     }
 
     /**
