@@ -26,7 +26,7 @@ class Vehicles extends Migration
 			$table->integer('model_id')->unsigned()->comment('vehicle_models->id');
 			$table->foreign('model_id')->references('id')->on('vehicle_models');
 		});
-		DB::statement("COMMENT ON TABLE $this->tableName IS 'Fahrzeug mit Kennzeichen'");
+		//DB::statement("COMMENT ON TABLE $this->tableName IS 'Fahrzeug mit Kennzeichen'");
 	}
 	
 	/**

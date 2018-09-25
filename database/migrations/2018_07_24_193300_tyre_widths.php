@@ -18,7 +18,7 @@ class TyreWidths extends Migration
             $table->increments('id');
             $table->decimal('width', 4, 1);
         });
-        DB::statement("COMMENT ON TABLE $this->tableName IS 'Reifenbreite'");
+        //DB::statement("COMMENT ON TABLE $this->tableName IS 'Reifenbreite'");
     }
 
     /**

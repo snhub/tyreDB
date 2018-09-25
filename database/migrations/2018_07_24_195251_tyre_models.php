@@ -21,7 +21,7 @@ class TyreModels extends Migration
             $table->integer('manufacturer_id')->unsigned()->comment('tyre_manufacturers->id');
             $table->foreign('manufacturer_id')->references('id')->on('tyre_manufacturers');
         });
-        DB::statement("COMMENT ON TABLE $this->tableName IS 'Modellbezeichnung'");
+        //DB::statement("COMMENT ON TABLE $this->tableName IS 'Modellbezeichnung'");
     }
 
     /**

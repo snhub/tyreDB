@@ -20,7 +20,7 @@ class TyreLoadIndices extends Migration
             $table->smallInteger('index')->unique()->nullable(false);
             $table->decimal('load', 5, 1)->nullable(false);
         });
-        DB::statement("COMMENT ON TABLE $this->tableName IS 'Tragfähigkeitsindex'");
+        //DB::statement("COMMENT ON TABLE $this->tableName IS 'Tragfähigkeitsindex'");
     }
 
     /**

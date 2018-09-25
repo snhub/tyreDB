@@ -5,6 +5,8 @@
 		@slot('overviewActive')  @endslot
 		@slot('stockActive')  @endslot
 		@slot('garageActive') active @endslot
+		@slot('tyreDataActive')  @endslot
+		@slot('vehicleDataActive')  @endslot
 	@endcomponent
 	@component('components.main-container')
 		@slot('content')
@@ -153,6 +155,17 @@
 						@endcomponent
 					@endslot
 				@endcomponent
+				
+				{{--TODO remove--}}
+				@component('components.developer-notes')
+					@slot('content')
+						Anzeige der Reifen an einem LKW.<br/>
+						<i>Geplant:<br/>
+							Es können Aktionen für die Reifen ausgewählt und damit ein Werkstattauftrag erstellt werden.<br/>
+						</i>
+					@endslot
+				@endcomponent
+				
 				
 				@component('components.footer')
 					@slot('columnRight')

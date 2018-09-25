@@ -19,7 +19,7 @@ class VehicleManufacturers extends Migration
             $table->increments('id');
             $table->string('name', 30);
         });
-        DB::statement("COMMENT ON TABLE $this->tableName IS 'Fahrzeug Hersteller'");
+        //DB::statement("COMMENT ON TABLE $this->tableName IS 'Fahrzeug Hersteller'");
     }
 
     /**

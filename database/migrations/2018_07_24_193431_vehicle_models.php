@@ -25,7 +25,7 @@ class VehicleModels extends Migration
             $table->tinyInteger('axles')->comment('Achszahl');
             $table->tinyInteger('tyres')->comment('Reifenzahl');
         });
-        DB::statement("COMMENT ON TABLE $this->tableName IS 'Fahrzeug-Modellbezeichungen'");
+        //DB::statement("COMMENT ON TABLE $this->tableName IS 'Fahrzeug-Modellbezeichungen'");
     }
 
     /**

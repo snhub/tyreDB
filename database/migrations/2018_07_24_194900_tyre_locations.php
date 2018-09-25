@@ -19,7 +19,7 @@ class TyreLocations extends Migration
             $table->increments('id');
             $table->string('name', 20)->unique()->notNull();
         });
-        DB::statement("COMMENT ON TABLE $this->tableName IS 'Aktueller Aufenthaltsort des Reifens: Montiert, Lager, zur Runderneuerung'");
+        //DB::statement("COMMENT ON TABLE $this->tableName IS 'Aktueller Aufenthaltsort des Reifens: Montiert, Lager, zur Runderneuerung'");
     }
 
     /**

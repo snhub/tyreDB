@@ -5,12 +5,14 @@
 		@slot('overviewActive')  @endslot
 		@slot('stockActive') active @endslot
 		@slot('garageActive')  @endslot
+		@slot('tyreDataActive')  @endslot
+		@slot('vehicleDataActive')  @endslot
 	@endcomponent
 	@component('components.main-container')
 		@slot('content')
 			{{-- New Dataset Modal --}}
 			@component('components.modal-lg')
-				@slot('id') newEditDatasetModal @endslot
+				@slot('id') newDatasetModal @endslot
 				@slot('title') Neuer Datensatz @endslot
 				@slot('approveButtonCaption') Senden @endslot
 				@slot('dismissButtonCaption') Abbrechen @endslot
@@ -18,8 +20,8 @@
 					<form>
 						<div class="row">
 							<div class="form-group col">
-								<label for="newEditManufacturer" class="col-form-label">Hersteller</label>
-								<select class="form-control" id="newEditManufacturer">
+								<label for="newDatasetManufacturer" class="col-form-label">Hersteller</label>
+								<select class="form-control" id="newDatasetManufacturer">
 									<option>Michelin</option>
 									<option>Goodyear</option>
 									<option>Dunlop</option>
@@ -27,42 +29,42 @@
 								</select>
 							</div>
 							<div class="form-group col">
-								<label for="newEditModel" class="col-form-label">Modell</label>
-								<input type="text" class="form-control" id="newEditModel" placeholder="Modell">
+								<label for="newDatasetModel" class="col-form-label">Modell</label>
+								<input type="text" class="form-control" id="newDatasetModel" placeholder="Modell">
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col">
-								<label for="newEditMetricWidth" class="col-form-label">Metrik</label>
+								<label for="newDatasetMetricWidth" class="col-form-label">Metrik</label>
 								<div class="row">
 									<div class="col-2">
-										<input type="number" class="form-control" id="newEditMetricWidth" placeholder="Breite">
+										<input type="number" class="form-control" id="newDatasetMetricWidth" placeholder="Breite">
 									</div>
 									<div class="col-2">
-										<input type="number" class="form-control" id="newEditMetricRatio" placeholder="H/B">
+										<input type="number" class="form-control" id="newDatasetMetricRatio" placeholder="H/B">
 									</div>
 									<div class="col-2">
-										<select class="form-control" id="newEditMetric">
+										<select class="form-control" id="newDatasetMetricRD">
 											<option>R</option>
 											<option>D</option>
 										</select>
 									</div>
 									<div class="col-2">
-										<input type="float" class="form-control" id="newEditMetricDiameter" placeholder="Ø">
+										<input type="float" class="form-control" id="newDatasetMetricDiameter" placeholder="Ø">
 									</div>
 									<div class="col-2">
-										<input type="number" class="form-control" id="newEditMetricLoadIndex" placeholder="Tragf.">
+										<input type="number" class="form-control" id="newDatasetMetricLoadIndex" placeholder="Tragf.">
 									</div>
 									<div class="col-2">
-										<input type="number" class="form-control" id="newEditMetricSpeedIndex" placeholder="Geschw.">
+										<input type="number" class="form-control" id="newDatasetMetricSpeedClass" placeholder="Geschw.">
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col">
-								<label for="newEditAxle" class="col-form-label">Achse</label>
-								<select class="form-control" id="newEditAxle">
+								<label for="newDatasetAxle" class="col-form-label">Achse</label>
+								<select class="form-control" id="newDatasetAxle">
 									<option>Allachs</option>
 									<option>Antrieb</option>
 									<option>Lenkachse</option>
@@ -70,8 +72,8 @@
 								</select>
 							</div>
 							<div class="form-group col">
-								<label for="newEditOperation" class="col-form-label">Einsatzgebiet</label>
-								<select class="form-control" id="newEditOperation">
+								<label for="newDatasetOperation" class="col-form-label">Einsatzgebiet</label>
+								<select class="form-control" id="newDatasetOperation">
 									<option>Regionalverkehr</option>
 									<option>Fernverkehr</option>
 								</select>
@@ -79,8 +81,8 @@
 						</div>
 						<div class="row">
 							<div class="form-group col">
-								<label for="newEditLocation" class="col-form-label">Ort</label>
-								<select class="form-control" id="newEditLocation">
+								<label for="newDatasetLocation" class="col-form-label">Ort</label>
+								<select class="form-control" id="newDatasetLocation">
 									<option>Montiert</option>
 									<option>Lager</option>
 									<option>Runderneuerung</option>
@@ -88,8 +90,8 @@
 								</select>
 							</div>
 							<div class="form-group col">
-								<label for="newEditQuality" class="col-form-label">Qualität</label>
-								<select class="form-control" id="newEditQuality">
+								<label for="newDatasetQuality" class="col-form-label">Qualität</label>
+								<select class="form-control" id="newDatasetQuality">
 									<option>Neu/Runderneuert</option>
 									<option>Gut</option>
 									<option>Mittel</option>
@@ -100,12 +102,12 @@
 						</div>
 						<div class="row">
 							<div class="form-group col">
-								<label for="newEditCount" class="col-form-label">Anzahl (Datensatz Kopien)</label>
-								<input type="number" class="form-control" id="newEditCount" placeholder="Anzahl">
+								<label for="newDatasetCount" class="col-form-label">Anzahl (Datensatz Kopien)</label>
+								<input type="number" class="form-control" id="newDatasetCount" placeholder="Anzahl">
 							</div>
 							<div class="form-group col">
-								<label for="newEditNotes" class="col-form-label">Notizen</label>
-								<textarea class="form-control" id="newEditNotes" rows="1"></textarea>
+								<label for="newDatasetNotes" class="col-form-label">Notizen</label>
+								<textarea class="form-control" id="newDatasetNotes" rows="1"></textarea>
 							</div>
 						</div>
 					</form>
@@ -121,7 +123,7 @@
 							@component('components.header.start')
 								@slot('content')
 									{{-- New-, Delete- Buttons --}}
-									<div class=""><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#newEditDatasetModal">Neu</a></div>
+									<div class=""><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#newDatasetModal">Neu</a></div>
 									<div class="p-2"><p class="text-center" style="white-space:nowrap">Auswahl:</p></div>
 									<div class="dropdown p-0 p-r-3 pr-4">
 										<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -317,6 +319,18 @@
 							</tbody>
 						</table>
 					</div>
+					
+					{{--TODO remove--}}
+					@component('components.developer-notes')
+						@slot('content')
+							Liste aller Reifen im Bestand. <br/>
+							<i>Geplant: <br/>
+							Bei Auswahl eines Reifens wird zur 'Reifendaten'-Seite gewechselt, wo dessen Daten bearbeitet werden können.<br/>
+							Über Mehrfachauswahl können Reifen gelöscht oder demontiert werden.
+							</i>
+						@endslot
+					@endcomponent
+					
 					@component('components.footer')
 						@slot('columnRight')
 							<div class="col pagination justify-content-end">

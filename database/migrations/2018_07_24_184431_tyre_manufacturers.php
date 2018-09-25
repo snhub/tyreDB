@@ -18,7 +18,7 @@ class TyreManufacturers extends Migration
             $table->increments('id');
             $table->string('name', 30);
         });
-        DB::statement("COMMENT ON TABLE $this->tableName IS 'Reifenhersteller'");
+        //DB::statement("COMMENT ON TABLE $this->tableName IS 'Reifenhersteller'");
     }
 
     /**

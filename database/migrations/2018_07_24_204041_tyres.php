@@ -42,7 +42,8 @@ class Tyres extends Migration
 			$table->integer('vehicle_id')->unsigned()->nullable()->comment('vehicles->id');
 			$table->foreign('vehicle_id')->references('id')->on('vehicles');
 		});
-		DB::statement("COMMENT ON TABLE $this->tableName IS 'Reifen'");
+		
+		//DB::statement("COMMENT ON TABLE $this->tableName IS 'Reifen'");
 	}
 	
 	/**

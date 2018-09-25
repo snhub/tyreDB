@@ -27,7 +27,7 @@
 						PageTitle
 					@endslot
 					@slot('actionsBar')
-						@component('components.header.start-3col')
+						@component('components.header.start')
 							@slot('content')
 								{{-- Actions bar left items go here --}}
 							@endslot

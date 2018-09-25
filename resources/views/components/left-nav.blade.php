@@ -11,7 +11,10 @@
 			<a class="nav-link {{ $garageActive }}" {{ ($garageActive == 'active') ?: "href=/garage" }}>Werkstatt</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="#">Analytics</a>
+			<a class="nav-link {{ $tyreDataActive }}" {{ ($tyreDataActive == 'active') ?: "href=/tyreData" }}>Reifendaten</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link {{ $vehicleDataActive }}" {{ ($vehicleDataActive == 'active') ?: "href=/vehicleData" }}>Fahrzeugdaten</a>
 		</li>
 	</ul>
 </nav>

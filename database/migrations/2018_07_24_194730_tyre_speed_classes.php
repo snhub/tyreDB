@@ -20,7 +20,7 @@ class TyreSpeedClasses extends Migration
             $table->char('clazz', 2);
             $table->smallInteger('speed');
         });
-        DB::statement("COMMENT ON TABLE $this->tableName IS 'Geschwindigkeitsklasse'");
+        //DB::statement("COMMENT ON TABLE $this->tableName IS 'Geschwindigkeitsklasse'");
     }
 
     /**

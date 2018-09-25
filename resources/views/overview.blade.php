@@ -5,6 +5,8 @@
 		@slot('overviewActive') active @endslot
 		@slot('stockActive')  @endslot
 		@slot('garageActive')  @endslot
+		@slot('tyreDataActive')  @endslot
+		@slot('vehicleDataActive')  @endslot
 	@endcomponent
 	@component('components.main-container')
 		@slot('content')
@@ -74,14 +76,25 @@
 						</tbody>
 					</table>
 				</div>
+				
+				{{--TODO remove--}}
+				@component('components.developer-notes')
+					@slot('content')
+						Übersichtsseite
+					@endslot
+				@endcomponent
+				
 				@component('components.footer')
 					@slot('columnRight')
 						{{-- Footer content right side goes here --}}
 					@endslot
 				@endcomponent
 			@endslot
+			
 			@endcomponent {{-- </components.main --}}
+			
 		@endslot
 	@endcomponent {{-- </components.main-container --}}
-
+	
 @endsection
+

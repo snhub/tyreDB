@@ -20,7 +20,7 @@ class VehicleTypes extends Migration
             $table->string('name', 30);
             $table->char('abbreviation', 3);
         });
-        DB::statement("COMMENT ON TABLE $this->tableName IS '>Motorwagen<, >Anhänger<, usw.'");
+        //DB::statement("COMMENT ON TABLE $this->tableName IS '>Motorwagen<, >Anhänger<, usw.'");
     }
 
     /**

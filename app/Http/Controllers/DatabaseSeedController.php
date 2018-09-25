@@ -171,7 +171,7 @@ class DatabaseSeedController extends Controller
 		assert_options(ASSERT_BAIL, true);
 		assert_options(ASSERT_WARNING, true);
 		$load = TyreLoadIndex::where('index', '4500')->get();
-		assert($load->load === 4500);
+		//assert($load->load === 4500);
 		
 		
 		$speedClass = TyreSpeedClazz::firstOrCreate(
@@ -207,7 +207,7 @@ class DatabaseSeedController extends Controller
 		
 		
 		$load = TyreLoadIndex::where('index', '4500')->get();
-		assert($load->load === 4500);
+		//assert($load->load === 4500);
 		
 		
 		$speedClass = TyreSpeedClazz::firstOrCreate(

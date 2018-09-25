@@ -18,6 +18,8 @@ Route::get('/developmentTools', function () {return view('developmentTools');});
 Route::get('/overview', 'OverviewController@show');
 Route::get('/stock', 'StockController@show');
 Route::get('/garage', 'GarageController@show');
+Route::get('/tyreData', 'TyreDataController@show');
+Route::get('/vehicleData', 'VehicleDataController@show');
 Route::get('/developmentTools/migrate', 'DevelopmentToolsController@migrate');
 Route::get('/developmentTools/seed', 'DevelopmentToolsController@seed');
 Route::get('/developmentTools/seedBridgestone', 'DatabaseSeedController@seedBridgestone');
