@@ -17,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
         // $handlers = \Log::getMonolog()->getHandlers();
         // $handler = array_shift($handlers);
         // $handler->setBubble(false);
+	    Schema::defaultStringLength(191);
     }
 
     /**
