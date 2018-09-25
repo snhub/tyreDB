@@ -17,6 +17,7 @@
                     <li class="list-group-item"><h2><a href="/update-notes" class="badge badge-primary">Update Notes</a></h2></li>
                     <li class="list-group-item"><h2><a href="#" class="badge badge-primary">Roadmap</a></h2></li>
                 </ul>
+	            <br/>
                 <h1>Weblinks Reifen</h1>
                 <ul class="list-group">
 	                <li class="list-group-item"><a href="https://de.wikipedia.org/wiki/Autoreifen"><h2>https://de.wikipedia.org/wiki/Autoreifen</h2></a></li>
@@ -24,12 +25,14 @@
 	                <li class="list-group-item"><a href="https://www.bridgestone.de/lkw-und-busse/~/media/Files/Commercial/Central/Downloads/TBR_Brochure%20Downloads/BS_TBR_Databook_2014.ashx"><h2>https://www.bridgestone.de/lkw-und-busse/~/media/Files/Commercial/Central/Downloads/TBR_Brochure%20Downloads/BS_TBR_Databook_2014.ashx</h2></a></li>
 	                <li class="list-group-item"><a href=""><h2></h2></a></li>
                 </ul>
+	            <br/>
 	            <h1>Known Bugs</h1>
 	            <ul class="list-group">
 		            <li class="list-group-item"><h2></h2></li>
 		            <li class="list-group-item"><h2></h2></li>
 		            <li class="list-group-item"><h2></h2></li>
 	            </ul>
+	            <br/>
 	            <h1>Development Tools</h1>
 	            <h3 class="pb-2"><a href="/developmentTools/migrate">Run Migrations (all data will be deleted)</a></h3>
 	            <h3 class="pb-2"><a href="/developmentTools/seed">Run Seeds</a></h3>
