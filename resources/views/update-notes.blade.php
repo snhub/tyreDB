@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="jumbotron">
                     <h2><strong>Update Notes</strong></h2>
-                    <p>Gesamtzeit: 43h</p>
+                    <p>Gesamtzeit: 113h</p>
                 </div>
                 <div class="container">
 <!--Template
@@ -29,7 +29,19 @@
                             
                         </li>
                     </ul>
--->
+-->              <h2>Dienstag, 25.09.2018</h2>
+	                <ul class="list-group">
+		                <li class="list-group-item">
+			                Erster Prototyp fertig und deployed
+		                </li>
+		                <li class="list-group-item">
+									Funktionierende Datenbankabfrage über Testdaten
+		                </li>
+		                <li class="list-group-item">
+								Verschiedene Views als Beispiel erstellt
+		                </li>
+	                </ul>
+	                <br/>
                 <h2>Wochenupdate Montag, 30.7.2018</h2>
                     <ul class="list-group">
                         <li class="list-group-item">

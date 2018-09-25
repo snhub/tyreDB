@@ -80,7 +80,9 @@
 				{{--TODO remove--}}
 				@component('components.developer-notes')
 					@slot('content')
-						Übersichtsseite
+						Übersichtsseite<br/>
+						!Prototyp - Alle Schaltflächen noch ohne Funktion (außer Seitennavigation der Datensätze bei 'Bestand').<br/>
+						Bei 'Bestand' werden die Datensätze aus der Datenbank geholt, wo es Testdaten gibt.
 					@endslot
 				@endcomponent
 				
